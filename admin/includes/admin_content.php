@@ -9,15 +9,15 @@
                         </h1>
                         <?php 
    
-                    // $result_set = User::find_all_users(); //Calling static method in user.php
-                    // while($row = mysqli_fetch_array($result_set)){
-                    //     echo $row['username'] . "<br>";
-                    // }
+                    $result_set = User::find_all_users(); //Calling static method in user.php
+                    while($row = mysqli_fetch_array($result_set)){ //looping through $result_set and getting array
+                        echo $row['username'] . "<br>";
+                    }
 
-                    $found_user = User::find_user_by_id(2); 
-                    $user = User::instantiation($found_user);
-                    echo $user->username;
-                    echo "<br>";
+                    // $found_user = User::find_user_by_id(2); 
+                    // $user = User::instantiation($found_user);
+                    // echo $user->username;
+                    // echo "<br>";
 ?>
                         <ol class="breadcrumb">
                             <li>

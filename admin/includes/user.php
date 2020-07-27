@@ -22,10 +22,16 @@ class User{
     public static function find_this_query($sql) {
         global $database;
         $result_set = $database->query($sql);
-        return $result_set;
+        $the_object_array = array(); //empty array for objects
+
+        while($row = mysqli_fetch_array($result_set)) { //loop that fetches the table and brings back result_set
+            $the_object_array[] = self::instantiation($row);
+        }
+
+        return $the_object_array; 
     }
 
-    public static function instantiation($the_record){ //getting table
+    public static function instantiation($the_record){ //loops through the attributes and assigns them to the objects properties
         $the_object = new self();
             // $the_object ->id         = $found_user ['id'];
             // $the_object ->username   = $found_user ['username'];
