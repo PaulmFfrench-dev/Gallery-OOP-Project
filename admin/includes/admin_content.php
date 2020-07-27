@@ -15,7 +15,9 @@
                     // }
 
                     $found_user = User::find_user_by_id(2); 
-                    echo $found_user['username'];
+                    $user = User::instantiation($found_user);
+                    echo $user->username;
+                    echo "<br>";
 ?>
                         <ol class="breadcrumb">
                             <li>
