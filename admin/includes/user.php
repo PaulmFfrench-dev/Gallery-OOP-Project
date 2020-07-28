@@ -68,6 +68,23 @@ class User{
         $object_properties = get_object_vars($this); //get all attributes from the class
         return array_key_exists($the_attribute, $object_properties); //two parameters, what we want to find and where to find it
     }
+
+    public function create() {
+        global $database;
+        $sql = "INSERT INTO users (username, password, first_name, last_name)";
+        $sql .= "VALUES ('";
+        $sql .= $database->escape_string($this->username) . "', '";
+        $sql .= $database->escape_string($this->password) . "', '";
+        $sql .= $database->escape_string($this->first_name) . "', '";
+        $sql .= $database->escape_string($this->last_name) . "')";
+        
+        if($database->query($sql)) {
+            
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 
