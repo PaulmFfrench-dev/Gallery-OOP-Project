@@ -9,7 +9,7 @@ class User{
     public $last_name;
 
     public static function find_all_users(){
-        return self::find_this_query("SELECT * FROM users"); //calls function fin_this_query
+        return self::find_this_query("SELECT * FROM users"); //calls function find_this_query
     }
 
     public static function find_user_by_id($user_id){ 
