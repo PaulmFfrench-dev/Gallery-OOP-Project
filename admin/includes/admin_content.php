@@ -7,28 +7,13 @@
                             Admin
                             <small>Subheading</small>
                         </h1>
-                        <?php 
-   
-                    // $result_set = User::find_all_users(); //Calling static method in user.php
-                    // while($row = mysqli_fetch_array($result_set)){ //looping through $result_set and getting array
-                    //     echo $row['username'] . "<br>";
-                    // }
-
-                    // $found_user = User::find_user_by_id(2); 
-                    // $user = User::instantiation($found_user);
-                    // echo $user->username;
-                    // echo "<br>";
-
-                    // $users = User::find_all_users();
-
-                    // foreach($users as $user) {
-                    //     echo $user->username . "<br>";
-                    // }
-
-                    $found_user = User::find_user_by_id(2); 
-                    echo $found_user->username;
-
-                    
+<?php 
+$user = new User();
+$user->username = "Example_username";
+$user->password = "Example_password";
+$user->first_name = "John";
+$user->last_name = "Doe";
+$user->create();
 ?>
                         <ol class="breadcrumb">
                             <li>

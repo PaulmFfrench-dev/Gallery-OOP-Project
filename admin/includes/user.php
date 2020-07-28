@@ -79,12 +79,13 @@ class User{
         $sql .= $database->escape_string($this->last_name) . "')";
         
         if($database->query($sql)) {
-            
+            $this->id = $database->the_insert_id(); //assigning the_insert_id to the object
             return true;
         }else{
             return false;
         }
     }
+
 }
 
 
