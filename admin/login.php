@@ -21,6 +21,7 @@ $user_found = User::verify_user($username, $password); //passing data through ve
     }
 
 }else{
+    $the_message = "";
     $username = "";
     $password = "";
 }
@@ -30,7 +31,7 @@ $user_found = User::verify_user($username, $password); //passing data through ve
 
 <div class="col-md-4 col-md-offset-3">
 
-<h4 class="bg-danger"><?php //echo $the_message; ?></h4>
+<h4 class="bg-danger"><?php echo $the_message; ?></h4>
 	
 <form id="login-id" action="" method="post">
 	
