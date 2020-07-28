@@ -27,6 +27,8 @@
 
                     $found_user = User::find_user_by_id(2); 
                     echo $found_user->username;
+
+                    $pictures = new pictures();
 ?>
                         <ol class="breadcrumb">
                             <li>
