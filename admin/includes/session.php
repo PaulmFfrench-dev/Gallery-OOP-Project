@@ -3,7 +3,7 @@
 class Session {
 
     private $signed_in = false;
-    public $user_id
+    public $user_id;
 
     function __construct(){
         session_start();

@@ -1,4 +1,4 @@
-<?php include("init.php"); ?>
+<?php include("includes/header.php"); ?>
 
 <?php 
 if($session->is_signed_in()){
@@ -12,7 +12,6 @@ if(isset($_POST['submit'])) {
 // Method to check database user
 
 $user_found = User::verify_user($username, $password); //passing data through verify_user method
-
 
     if($user_found) {
         $session->login($user_found);
@@ -31,7 +30,7 @@ $user_found = User::verify_user($username, $password); //passing data through ve
 
 <div class="col-md-4 col-md-offset-3">
 
-<h4 class="bg-danger"><?php echo $the_message; ?></h4>
+<h4 class="bg-danger"><?php //echo $the_message; ?></h4>
 	
 <form id="login-id" action="" method="post">
 	

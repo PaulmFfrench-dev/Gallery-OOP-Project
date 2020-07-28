@@ -6,7 +6,7 @@ $class = strtolower($class); //Converts string to lower
 $the_path = "includes/{$class}.php";
 
     if(is_file($the_path) && !class_exists($class)) {
-        nclude $the_path;
+        include $the_path;
     }
 }
 
