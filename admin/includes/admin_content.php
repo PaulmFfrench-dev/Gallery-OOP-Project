@@ -25,9 +25,8 @@
 // $user = User::find_user_by_id(5);
 // $user->delete();
 
-// $user = User::find_user_by_id(4);
-// $user->username = "WHATEVER";
-// $user->save();
+// $photo = Photo::find_by_id(5);
+// echo $photo->filename;
 
 // $user = new User();
 // $user->username = "New User";
@@ -48,7 +47,7 @@
 // $photo->size = 20;
 // $photo->create();
 
-echo INCLUDES_PATH;
+//echo INCLUDES_PATH;
 ?>
                         <ol class="breadcrumb">
                             <li>
