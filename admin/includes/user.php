@@ -69,6 +69,10 @@ class User{
         return array_key_exists($the_attribute, $object_properties); //two parameters, what we want to find and where to find it
     }
 
+    public function save() {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
     public function create() {
         global $database;
         $sql = "INSERT INTO users (username, password, first_name, last_name)";
