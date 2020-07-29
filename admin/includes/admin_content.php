@@ -15,9 +15,12 @@
 // $user->last_name = "Doe";
 // $user->create();
 
-$user = User::find_user_by_id(2);
-$user->last_name = "WILLIAMS";
-$user->update();
+// $user = User::find_user_by_id();
+// $user->last_name = "WILLIAMS";
+// $user->update();
+
+$user = User::find_user_by_id(3);
+$user->delete();
 ?>
                         <ol class="breadcrumb">
                             <li>
