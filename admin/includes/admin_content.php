@@ -15,20 +15,20 @@
 // $user->last_name = "Doe";
 // $user->create();
 
-// $user = User::find_user_by_id();
-// $user->last_name = "WILLIAMS";
-// $user->update();
+$user = User::find_user_by_id(1);
+$user->username = "WILLIAMS";
+$user->update();
 
-// $user = User::find_user_by_id(3);
+// $user = User::find_user_by_id(5);
 // $user->delete();
 
 // $user = User::find_user_by_id(4);
 // $user->username = "WHATEVER";
 // $user->save();
 
-$user = User::find_user_by_id(5);
-$user->password = "password";
-$user->save();
+// $user = new User();
+// $user->username = "password";
+// $user->save();
 ?>
                         <ol class="breadcrumb">
                             <li>
