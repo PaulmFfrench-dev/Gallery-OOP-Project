@@ -8,12 +8,12 @@
                             <small>Subheading</small>
                         </h1>
 <?php 
-$user = new User();
-$user->username = "Student";
-$user->password = "password";
-$user->first_name = "Testfirstname";
-$user->last_name = "Testlastname";
-$user->create();
+// $user = new User();
+// $user->username = "Student";
+// $user->password = "password";
+// $user->first_name = "Testfirstname";
+// $user->last_name = "Testlastname";
+// $user->create();
 
 // $user = User::find_user_by_id(15);
 // $user->username = "DW50";
@@ -32,6 +32,11 @@ $user->create();
 // $user = new User();
 // $user->username = "password";
 // $user->save();
+
+$users = User::find_all();
+foreach ($users as $user) {
+    echo $user->username;
+}
 ?>
                         <ol class="breadcrumb">
                             <li>
