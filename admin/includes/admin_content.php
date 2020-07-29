@@ -29,14 +29,14 @@
 // $user->username = "WHATEVER";
 // $user->save();
 
-// $user = new User();
-// $user->username = "password";
-// $user->save();
+$user = new User();
+$user->username = "New User";
+$user->save();
 
-$users = User::find_all();
-foreach ($users as $user) {
-    echo $user->username;
-}
+// $users = User::find_all();
+// foreach ($users as $user) {
+//     echo $user->username;
+//}
 ?>
                         <ol class="breadcrumb">
                             <li>
