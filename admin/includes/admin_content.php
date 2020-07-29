@@ -29,14 +29,24 @@
 // $user->username = "WHATEVER";
 // $user->save();
 
-$user = new User();
-$user->username = "New User";
-$user->save();
+// $user = new User();
+// $user->username = "New User";
+// $user->save();
 
 // $users = User::find_all();
 // foreach ($users as $user) {
 //     echo $user->username;
 //}
+
+$photos = Photo::find_all();
+foreach ($photos as $photo) {
+    echo $photo->title;
+}
+
+$photo = new Photo();
+$photo->title = "Testcreate";
+$photo->size = 20;
+$photo->create();
 ?>
                         <ol class="breadcrumb">
                             <li>
