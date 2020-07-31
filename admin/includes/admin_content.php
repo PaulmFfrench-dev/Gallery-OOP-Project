@@ -1,3 +1,9 @@
+<?php require_once("init.php"); ?>
+<?php 
+
+
+
+?>
 <div class="container-fluid">
 
                 <!-- Page Heading -->
@@ -7,56 +13,107 @@
                             Admin
                             <small>Subheading</small>
                         </h1>
-<?php 
-// $user = new User();
-// $user->username = "Student";
-// $user->password = "password";
-// $user->first_name = "Testfirstname";
-// $user->last_name = "Testlastname";
-// $user->create();
 
-// $user = User::find_user_by_id(15);
-// $user->username = "DW50";
-// $user->password = "password";
-// $user->first_name = "David";
-// $user->last_name = "Williams";
-// $user->update();
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-users fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="huge"><?php echo $session->count; ?></div>
+                                                <div>New Views</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                        <span class="pull-left">View Details</span> 
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span> 
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-// $user = User::find_user_by_id(5);
-// $user->delete();
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-photo fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="huge"><?php echo Photo::count_all(); ?></div>
+                                                <div>Photos</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Total Photos in Gallery</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-// $photo = Photo::find_by_id(5);
-// echo $photo->filename;
 
-// $user = new User();
-// $user->username = "New User";
-// $user->save();
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-yellow">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-user fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="huge"><?php echo User::count_all(); ?></div>
 
-// $users = User::find_all();
-// foreach ($users as $user) {
-//     echo $user->username;
-//}
+                                                <div>Users</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Total Users</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-// $photos = Photo::find_all();
-// foreach ($photos as $photo) {
-//     echo $photo->title;
-// }
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-support fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div class="huge"><?php echo Comment::count_all(); ?></div>
+                                                <div>Comments</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Total Comments</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-// $photo = new Photo();
-// $photo->title = "Testcreate";
-// $photo->size = 20;
-// $photo->create();
 
-//echo INCLUDES_PATH;
-?>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        </div> <!--First Row-->
+                        <div class="row">
+                        <div id="piechart" style="width: 900px; height: 500px;"></div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.row -->
