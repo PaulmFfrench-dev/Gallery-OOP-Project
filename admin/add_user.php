@@ -13,7 +13,8 @@ if(isset($_POST['create'])) {
         $user->password = $_POST['password'];
 
         $user->set_file($_FILES['user_image']);
-        $user->save_user_image();
+        $user->upload_user_photo();
+        $user->save();
     }
 }
 
