@@ -23,10 +23,10 @@ class Comment extends Db_object{
     }
 
     public static function find_the_comments($photo_id=0) { //passing in photo Id
-        $global $database
+        global $database;
         $sql  = "SELECT * FROM " . self::$db_table; 
         $sql .= " WHERE photo_id = ". $database->escape_string($photo_id);
-        $sql .= "ORDER BY photo_id ASC";
+        $sql .= " ORDER BY photo_id ASC";
 
         return self::find_by_query($sql);
 

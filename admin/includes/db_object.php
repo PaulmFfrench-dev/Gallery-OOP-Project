@@ -23,7 +23,6 @@ class Db_object{
     public static function find_by_id($id){ 
         global $database;
         
-        //$id= $_GET['id'];
         $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id ");
         
         return !empty($the_result_array) ? array_shift($the_result_array) :false; //If array is not empty, array shift else return false
