@@ -19,24 +19,6 @@ class Photo extends Db_object {
 
     // This is passing $_Files['uploaded_file'] as an arguement
 
-    public function set_file($file) {
-
-        if(empty($file) || !$file || !is_array($file)) {
-            $this->errors[] = "There was no file uploaded here";
-            return false;
-        } elseif($file['error'] !=0) {
-
-        $this->errors[] = $this->upload_errors_array[$file['error']];
-        return false;
-        
-        } else {
-        $this->filename = basename($file['name']);
-        $this->tmp_path = ($file['tmp_name']);
-        $this->type = ($file['type']);
-        $this->size = ($file['size']);
-        }
-    }
-
     public function picture_path() {
         return $this->upload_directory.DS.$this->filename;
     }
