@@ -5,7 +5,6 @@
 
 $comments= Comment::find_all();
 
-
 ?>
 
         <!-- Navigation -->
