@@ -15,24 +15,6 @@ class Db_object{
         
         );
 
-    public function set_file($file) {
-
-        if(empty($file) || !$file || !is_array($file)) {
-            $this->errors[] = "There was no file uploaded here";
-            return false;
-        } elseif($file['error'] !=0) {
-
-        $this->errors[] = $this->upload_errors_array[$file['error']];
-        return false;
-        
-        } else {
-        $this->user_image = basename($file['name']);
-        $this->tmp_path = ($file['tmp_name']);
-        $this->type = ($file['type']);
-        $this->size = ($file['size']);
-        }
-    }
-    
     public static function find_all(){ 
         //Error requires late static binding solution
         return static::find_by_query("SELECT * FROM " . static::$db_table . " "); //calls function find_this_query
@@ -40,10 +22,11 @@ class Db_object{
 
     public static function find_by_id($id){ 
         global $database;
-        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id LIMIT 1");
+        
+        //$id= $_GET['id'];
+        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id ");
         
         return !empty($the_result_array) ? array_shift($the_result_array) :false; //If array is not empty, array shift else return false
-
     }
 
     public static function find_by_query($sql) {
@@ -68,7 +51,6 @@ class Db_object{
                 $the_object->$the_attribute = $value; //if the key exists, the attribute of the object is getting it's value assigned to it.
             }
         }
-
             return $the_object;
     }
 
