@@ -8,7 +8,7 @@ $message = "";
 if(isset($_POST['submit'])) {
     $photo = new Photo;
     $photo->title = $_POST['title'];
-    $photo->set_file($_FILES['file_upload']);
+    $photo->set_file($_FILES['filename']);
 
     if($photo->save()) {
         $message = "Photo uploaded successfully";
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
                 <input type="text" name="title" class="form-control">            
             </div>
             <div class="form-group">
-                <input type="file" name="file_upload">            
+                <input type="file" name="filename">            
             </div>
                 <input type="submit" name="submit">            
         </form>
