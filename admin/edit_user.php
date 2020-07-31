@@ -10,13 +10,18 @@ $user = User::find_by_id($_GET['id']);
 
 if(isset($_POST['update'])) {
     if($user) {
-    $user->username = $_POST['username'];
-    $user->first_name = $_POST['first_name'];
-    $user->last_name = $_POST['last_name'];
-    $user->password = $_POST['password'];
-
-    $user->set_file($_FILES['user_image']);
-    $user->save_user_image();
+        $user->username = $_POST['username'];
+        $user->first_name = $_POST['first_name'];
+        $user->last_name = $_POST['last_name'];
+        $user->password = $_POST['password'];
+        if(empty($_FILES['user_image'])) {
+            $user->save();
+        }else{
+            $user->set_file($_FILES['user_image']);
+            $user->upload_user_photo();
+            $user->save();
+            redirect("edit_user.php?id={$user->id}");
+        }
     }
 }
 
@@ -70,9 +75,10 @@ if(isset($_POST['update'])) {
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control" value="<?php echo $user->password; ?>">
                 </div>
                 <div class="form-group">
+                    <a class="btn btn-danger" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
                     <input type="submit" name="update" class="btn btn-primary pull-right" value="Update">
                 </div>
             </div>
