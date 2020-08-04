@@ -95,6 +95,18 @@ class User extends Db_object{
 
         echo $this->image_path_and_placeholder();
     }
+
+    public function delete_photo(){
+        if($this->delete()){
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->user_image;
+            // print_r($target_path);
+            // die;
+            if(unlink($target_path)){
+                return true;
+            }
+            return false;
+        }
+    }
 }
 
 
