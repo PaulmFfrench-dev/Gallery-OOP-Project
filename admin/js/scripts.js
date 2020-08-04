@@ -4,7 +4,7 @@ $( document ).ready(function(){
     var user_id;
     var image_src;
     var image_href_splitted;
-    var image_id;
+    var image_name;
 
     $(".modal_thumbnails").click(function(){
         $("#set_user_image").prop('disabled', false);
@@ -15,9 +15,22 @@ $( document ).ready(function(){
 
         image_src = $(this).prop("src");
         image_href_splitted = user_src.split("/");
-        image_id = image_href_splitted[image_href_splitted.length -1];
+        image_name = image_href_splitted[image_href_splitted.length -1];
 
     });
 
+    $("#set_user_image").click(function(){
+        $.ajax({
+            url: "includes/ajax_code.php",
+            data:{image_name: image_name, user_id:user_id},
+            type: "POST",
+            success:function(data){
+                if(!data.error){
+                    alert(data);
+                }
+            }
+        });
+    
+    });
     tinymce.init({selector:'textarea'});
 });
