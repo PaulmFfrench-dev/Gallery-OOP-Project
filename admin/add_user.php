@@ -13,8 +13,10 @@ if(isset($_POST['create'])) {
         $user->password = $_POST['password'];
 
         $user->set_file($_FILES['user_image']);
+        $session->message("The {$user->username} has been added");
         $user->upload_user_photo();
         $user->save();
+        redirect("users.php");
     }
 }
 
