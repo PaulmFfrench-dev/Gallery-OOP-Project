@@ -8,6 +8,7 @@
 
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" ></script>
 
+    <script src="js/dropzone.js"></script>
     <script src="js/scripts.js"></script>
 
     <script type="text/javascript">
