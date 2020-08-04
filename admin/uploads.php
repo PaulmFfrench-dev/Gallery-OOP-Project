@@ -5,10 +5,10 @@
 <?php 
 
 $message = "";
-if(isset($_POST['submit'])) {
+if(isset($_FILES['file'])) {
     $photo = new Photo;
     $photo->title = $_POST['title'];
-    $photo->set_file($_FILES['filename']);
+    $photo->set_file($_FILES['file']);
 
     if($photo->save()) {
         $message = "Photo uploaded successfully";
