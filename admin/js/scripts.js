@@ -14,7 +14,7 @@ $( document ).ready(function(){
         user_id = user_href_splitted[user_href_splitted.length -1];
 
         image_src = $(this).prop("src");
-        image_href_splitted = user_src.split("/");
+        image_href_splitted = image_src.split("/");
         image_name = image_href_splitted[image_href_splitted.length -1];
 
     });
@@ -26,7 +26,7 @@ $( document ).ready(function(){
             type: "POST",
             success:function(data){
                 if(!data.error){
-                    alert(data);
+                    $(".user_image_box a img").prop('src', data);
                 }
             }
         });
